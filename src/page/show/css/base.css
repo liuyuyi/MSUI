@@ -1,0 +1,87 @@
+body{
+  margin: 0;
+  padding:0;
+  font-family: "Segoe UI","Segoe","Hiragino Sans GB", "Microsoft Yahei", 'tahoma', 'arial', 微软雅黑, 宋体;
+}
+.left{
+  float: left;
+}
+#demo{
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.clock{
+  position:relative;
+}
+.clock .display{
+  position:relative;
+  text-align:center;
+}
+
+.clock .date{
+  width:100%;
+  text-align:center;
+  font-size:14px;
+  line-height: 25px;
+}
+
+
+.clock.light{
+  overflow: hidden;
+}
+
+.clock.light .digits div span{
+  background-color:#272e38;
+  border-color:#272e38; 
+}
+
+.clock.light .alarm{
+  background:url('../img/alarm_light.jpg');
+}
+
+.clock .digits div{
+  text-align:left;
+  position:relative;
+  display:inline-block;
+  /*margin:0 4px;*/
+}
+
+.clock .digits div span{
+  opacity:0;
+  position:absolute;
+  -webkit-transition:0.25s;
+  -moz-transition:0.25s;
+  transition:0.25s;
+}
+
+.weather_day{
+  vertical-align: top;
+}
+
+
+.rotate90{
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg);   /* IE 9 */
+  -moz-transform:rotate(90deg);  /* Firefox */
+  -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+  -o-transform:rotate(90deg);  /* Opera */
+}
+.rotate180{
+  transform:rotate(180deg);
+  -ms-transform:rotate(180deg);   /* IE 9 */
+  -moz-transform:rotate(180deg);  /* Firefox */
+  -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+  -o-transform:rotate(180deg);  /* Opera */
+}
+.rotate270{
+  transform:rotate(270deg);
+  -ms-transform:rotate(270deg);   /* IE 9 */
+  -moz-transform:rotate(270deg);  /* Firefox */
+  -webkit-transform:rotate(270deg); /* Safari 和 Chrome */
+  -o-transform:rotate(270deg);  /* Opera */
+}
+
+.dnytable td{
+  padding: 0px 4px;
+}

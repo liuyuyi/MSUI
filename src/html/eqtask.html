@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>任务</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="address=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="./../fonts/iconfont.css">
+    <link rel="stylesheet" href="./../css/sui/sm.css">
+    <!-- <link rel="stylesheet" href="./../css/sui/sm-extend.css"> -->
+    <link rel="stylesheet" href="./../css/dxhtmltree/dhtmlxtree.css">
+    <link rel="stylesheet" href="./../css/inside.css">
+
+</head>
+
+<body>
+
+    <div class="page-group">
+        <!-- 设备 -->
+        <div class="page">
+            <header class="bar bar-nav top-head-nav">
+                <a class="icon icon-menu pull-left open-panel" data-panel="#panel-left-menu"></a>
+                <a class="button button-link button-nav pull-right" id="search-popup">
+                    <i class="iconfont icon-sousuo"></i>
+                </a>
+                <a href="javascript:void(0);" class="button button-link button-nav pull-right" id="eq-popup">
+                    <i class="iconfont icon-shu"></i>
+                </a>
+                <h1 class="title">
+                    任务
+                </h1>
+            </header>
+            <div id="content-list" class="content noContent-tool native-scroll close-panel content-page-list content-play-list pull-to-refresh-content infinite-scroll infinite-scroll-bottom"
+                data-ptr-distance="50" data-distance="50">
+                <div class="pull-to-refresh-layer">
+                    <div class="preloader"></div>
+                    <div class="pull-to-refresh-arrow"></div>
+                </div>
+                <div class="list-block" id="mornitor-list-data">
+
+                </div>
+                <div class="infinite-scroll-preloader" style="display: none;">
+                    <div class="preloader"></div>
+                </div>
+                <div class="noMoreData"></div>
+            </div>
+        </div>
+
+        <!-- 导航 -->
+        <div class="panel panel-left panel-reveal theme-dark" id="panel-left-menu">
+            <div class="close-panel close-btn">
+                <i class="iconfont icon-cuo"></i>
+            </div>
+            <div class="list-block list-menu">
+                <ul>
+                    <li>
+                        <a class="close-panel" href="play.html">
+                            <span class="icon">
+                                <i class="iconfont icon-bofang2"></i>
+                            </span>
+                            <span class="info"> 播放</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="close-panel" href="media.html">
+                            <span class="icon">
+                                <i class="iconfont icon-sucai"></i>
+                            </span>
+                            <span class="info"> 素材</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="close-panel" href="audit.html">
+                            <span class="icon">
+                                <i class="iconfont icon-shenhe"></i>
+                            </span>
+                            <span class="info"> 审核</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="close-panel" href="monitoring.html">
+                            <span class="icon">
+                                <i class="iconfont icon-jiankong"></i>
+                            </span>
+                            <span class="info"> 监控</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="login-out">
+                <button class="button button-sm button-fill button-danger external" id="login-out">退出</button>
+            </div>
+        </div>
+
+        <!-- 搜索 -->
+        <div class="popup popup-search">
+            <div class="popup-title">
+                搜索
+            </div>
+            <div class="content-block">
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input type="text" id="task-searcheq" placeholder="设备编号">
+                                        <div class="iss-close">
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <select id="task-state">
+                                            <option value="-1">任务状态</option>
+                                            <option value="0">待处理</option>
+                                            <option value="1">正在处理</option>
+                                            <option value="2">处理成功</option>
+                                            <option value="3">处理失败</option>
+                                            <option value="4">异常</option>
+                                            <option value="5">未审核</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <div class="item-text multi-select">
+                                            <div class="multi-select-list">
+                                                选择任务类型
+                                            </div>
+                                            <div class="item-add-icon" id="multi-select"><i class="iconfont icon-tianjia"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input type="text" id="datetime-start" placeholder="开始时间" />
+                                        <div class="iss-close">
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input type="text" id="datetime-end" placeholder="结束时间" />
+                                        <div class="iss-close">
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-50">
+                            <a href="javascript:void(0);" class="button button-big button-fill button-danger close-popup">关闭</a>
+                        </div>
+                        <div class="col-50">
+                            <input type="submit" value="搜索" class="button button-big button-fill button-success" id="task-submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 任务详情 -->
+        <div class="popup popup-map-task">
+            <div class="popup-title">
+                任务详情
+            </div>
+            <div class="content-block">
+                <div class="list-block">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">备注</div>
+                                <div class="item-input">
+                                    <textarea id="task-info" disabled></textarea>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <a href="javascript:void(0);" class="button button-big button-fill button-danger close-popup">关闭</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 树(不含设备) -->
+        <div class="popup popup-eq">
+            <div class="popup-title">
+                设备组
+            </div>
+            <div class="content-block">
+                <div class="list-block popup-tree">
+                    <div id="eq-tree"></div>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-100">
+                            <a href="javascript:void(0);" class="button button-big button-fill button-danger close-popup">关闭</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="float-menu">
+            <div class="float-menu-icon" data-flm="closed">
+                <div class="float-menu-btn">
+                    <i class="iconfont icon-caidan"></i>
+                </div>
+                <div class="float-menu-list">
+                    <ul>
+                        <li>
+                            <a href="monitoring.html" external>
+                                <i class="iconfont icon-shebei"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 遮罩 -->
+    <div class="custom-overlay"></div>
+    <script src="./../js/lang.js"></script>
+    <script src="./../lib/zepto/zepto.js"></script>
+    <script src="./../lib/moment/moment.min.js"></script>
+    <script src="./../lib/dxhtml/dhtmlxcommon.js"></script>
+    <script src="./../lib/dxhtml/dhtmlxtree.js"></script>
+    <script src="./../lib/sui/sm.js"></script>
+    <!-- <script src="./../lib/sui/sm-extend.js"></script> -->
+    <script src="./../js/base.js"></script>
+    <script src="./../js/eqtask.js"></script>
+
+</body>
+
+</html>

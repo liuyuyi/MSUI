@@ -1,0 +1,68 @@
+@import 'common';
+.login{
+    @include linear-gradient(205deg, #38cdd7,#2b75ba);
+    .login-wrap{
+        width: 100%;
+        height: 100%;
+        background-image: url('./../images/login_bg.png');
+        background-size: cover;
+    }
+    .login-item{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .login-title{
+        margin-bottom: pxToRem(30);
+        font-size: pxToRem(30);
+        text-align: center;
+        color: #ffffff;
+    }
+    .button{
+        width: 100%;
+        height: pxToRem(34);
+        line-height: pxToRem(34);
+        @include box-shadow(0rem, pxToRem(3), pxToRem(8), 0rem, #017da7);
+    }
+    .info{
+        input{
+            border: none;
+            background: none;
+            color: #ffffff;
+            height: pxToRem(40);
+            @include input-placeholder(#ffffff);
+            &::-ms-clear { display: none; }
+            &:valid + .iss-close {display: block;}
+        }
+        .iss-close{
+            display: none;
+            position: absolute;
+            right: pxToRem(5);
+            top:0;
+            line-height: pxToRem(40);
+            font-size: pxToRem(20);
+            color: #ffffff;
+        }
+        .iss-close-hide{
+            display: none!important;
+        }
+        .item{
+            padding-left: pxToRem(30);
+            position: relative;
+            margin-bottom: pxToRem(30);
+            .icon{
+                position: absolute;
+                left: 0;
+                color:#ffffff;
+                .iconfont{
+                    font-size: pxToRem(24);
+                }
+            }
+        }
+        .user-inp, .user-pwd{
+            border-bottom: pxToRem(1) solid #ffffff;
+        }
+    }
+    
+}

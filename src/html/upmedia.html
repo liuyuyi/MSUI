@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>上传</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="address=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="./../fonts/iconfont.css">
+    <!-- <link rel="stylesheet" href="./../css/swiper.min.css"> -->
+    <link rel="stylesheet" href="./../css/sui/sm.css">
+    <!-- <link rel="stylesheet" href="./../css/sui/sm-extend.css"> -->
+    <link rel="stylesheet" href="./../css/inside.css">
+
+</head>
+
+<body>
+
+    <div class="page-group">
+        <div class="page">
+            <header class="bar bar-nav top-head-nav">
+                <a class="icon icon-left pull-left back"></a>
+                <a class="button button-link button-nav pull-right open-popup" data-popup=".popup-lable">
+                    <i class="iconfont icon-tags2"></i>
+                </a>
+                <h1 class="title">
+                    上传
+                </h1>
+            </header>
+            <div class="content native-scroll close-panel content-page-list">
+                <div class="upload-file">
+                    <div class="upload-file-type clearfix">
+                        <div class="item pull-left active" data-type="picture">图片</div>
+                        <div class="item pull-left" data-type="video">视频</div>
+                        <!-- <div class="item pull-left" data-type="rtf">文本</div> -->
+                    </div>
+                    <div class="file-thumb clearfix">
+                        <div class="file-thumb-list clearfix pull-left">
+                            <!-- <div class="item pull-left">
+                                <div class="delete">
+                                    <i class="iconfont icon-shanchu"></i>
+                                </div>
+                                <img src="images/pic.jpg" alt="">
+                            </div> -->
+                            <div class="file-input pull-left">
+                                <i class="iconfont icon-tianjiajiahaowubiankuang"></i>
+                                <input type="file" name="fileToUpload" class="file-To-Upload" accept="image/*" multiple="multiple" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="upload-btn">
+                    <div class="btn upload-btn-in">
+                        上传
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 预览 -->
+        <div class="preview-wrap" id="preview-view">
+            <div class="preview-tool">
+                <a class="iconfont icon-shanchu pull-right" id="preview-close"></a>
+            </div>
+            <div class="preview" id="show-image">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 上传状态 -->
+        <div class="preview-wrap" id="preview-loading">
+            <div class="progress-wrap">
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0%;"></div>
+                </div>
+                <div class="progress-num">
+                    <span id="progress-percent">0</span>%
+                </div>
+            </div>
+        </div>
+        <!-- 上传标签 -->
+        <div class="popup popup-lable">
+            <div class="popup-title">
+                素材设置
+            </div>
+            <div class="content-block">
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media">
+                                    <i class="icon icon-form-name"></i>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title label">公开状态</div>
+                                    <div class="item-input">
+                                        <div class="row">
+                                            <div class="col-50">
+                                                <label>
+                                                    <input type="radio" name="style" class="radioStyle" checked="checked"
+                                                        value="2"> 私有
+                                                </label>
+                                            </div>
+                                            <div class="col-50">
+                                                <label>
+                                                    <input type="radio" name="style" class="radioStyle" value="1"> 公开
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media">
+                                    <i class="icon icon-form-name"></i>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title label">媒体标签</div>
+                                    <div class="item-input">
+                                        <input onkeyup="this.value=Public.checkInputVal(this.value)" onafterpaste="this.value=Public.checkInputVal(this.value)"
+                                            type="text" id="media-lable" placeholder="媒体标签">
+                                        <div class="iss-close">
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="align-top">
+                            <div class="item-content">
+                                <div class="item-media">
+                                    <i class="icon icon-form-comment"></i>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title label">备注</div>
+                                    <div class="item-input">
+                                        <textarea id="media-remarks" onkeyup="this.value=Public.checkInputVal(this.value)"
+                                            onafterpaste="this.value=Public.checkInputVal(this.value)"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <a class="button button-big button-fill button-danger close-popup">确定</a>
+                </div>
+            </div>
+        </div>
+        <div class="preview-wrap" id="preview-video">
+            <div class="close">
+                <i class="iconfont icon-shanchu"></i>
+            </div>
+            <div class="video-player" id="video-player">
+                <video src="" webkit-playsinline="true" x-webkit-airplay="true" playsinline="true" x5-video-player-type="h5"
+                    x5-video-player-fullscreen="true" preload="none"></video>
+                <div class="video-controls">
+                    <div class="progress" style="clear: both;">
+                        <div class="bar"></div>
+                        <div class="loaded"></div>
+                        <div class="elapse"></div>
+                    </div>
+                    <div class="video-btn-list left">
+                        <a href="javascript:;" class="video-btn play iconfont icon-bofang"></a>
+                        <a href="javascript:;" class="video-btn volume iconfont icon-zengdayinliang"></a>
+                    </div>
+                    <div class="video-volume left">
+                        <div class="video-rang"></div>
+                        <div class="video-volume-progress"></div>
+                    </div>
+                    <div class="time right">
+                        <span class="currentTime">00:00:00</span>\
+                        <span class="totalTime">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./../js/lang.js"></script>
+    <script src="./../lib/zepto/zepto.js"></script>
+    <script src="./../lib/videojs/video.min.js"></script>
+    <script src="./../lib/moment/moment.min.js"></script>
+    <script src="./../lib/uploader/upload.js"></script>
+    <script src="./../lib/swiper/swiper.min.js"></script>
+    <script src="./../lib/swiper/swiper.animate1.0.3.min.js"></script>
+    <script src="./../lib/sui/sm.js"></script>
+    <!-- <script src="./../lib/sui/sm-extend.js"></script> -->
+    <script src="./../js/base.js"></script>
+    <script src="./../js/upmedia.js"></script>
+</body>
+
+</html>

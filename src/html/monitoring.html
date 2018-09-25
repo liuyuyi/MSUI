@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>监控</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="address=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="./../fonts/iconfont.css">
+    <link rel="stylesheet" href="./../css/sui/sm.css">
+    <!-- <link rel="stylesheet" href="./../css/sui/sm-extend.css"> -->
+    <link rel="stylesheet" href="./../css/dxhtmltree/dhtmlxtree.css">
+    <link rel="stylesheet" href="./../css/inside.css">
+
+</head>
+
+<body>
+
+    <div class="page-group">
+        <!-- 设备 -->
+        <div class="page" id="routers-equipment">
+            <header class="bar bar-nav top-head-nav">
+                <a class="icon icon-menu pull-left open-panel" data-panel="#panel-left-menu"></a>
+                <a class="button button-link button-nav pull-right" id="search-popup">
+                    <i class="iconfont icon-sousuo"></i>
+                </a>
+                <a href="javascript:void(0);" class="button button-link button-nav pull-right" id="eq-popup">
+                    <i class="iconfont icon-shu"></i>
+                </a>
+                <!-- <a href="javascript:void(0);" class="button button-link button-nav pull-right">
+                            <i class="iconfont icon-zhiling"></i>
+                        </a> -->
+                <h1 class="title">
+                    设备
+                </h1>
+            </header>
+            <!-- 列表工具栏 -->
+            <div class="content-tool">
+                <div class="label-checked-box pull-left">
+                    <input type="checkbox" class="checkAll" id="checkAll" data-list="content-list" />
+                    <label for="checkAll">
+                        <span class="name">
+                            全选
+                        </span>
+                    </label>
+                </div>
+                <div class="content-tool-delete pull-right eq-delete">
+                    <i class="iconfont icon-shanchu1"></i>
+                </div>
+            </div>
+            <div id="content-list" class="content native-scroll content-page-list content-media-list pull-to-refresh-content infinite-scroll infinite-scroll-bottom"
+                data-ptr-distance="50" data-distance="50">
+                <div class="pull-to-refresh-layer">
+                    <div class="preloader"></div>
+                    <div class="pull-to-refresh-arrow"></div>
+                </div>
+                <div class="list-block">
+                    <div class="row" id="mornitor-list-data">
+                        <!-- <div class="col-50">
+                                    <div class="item online">
+                                        <div class="label-checked-box pull-left">
+                                            <input type="checkbox" id="check-01" />
+                                            <label for="check-01">
+                                            </label>
+                                        </div>
+                                        <div class="eq-type">
+                                            X3M
+                                        </div>
+                                        <div class="item-in">
+                                            <div class="pic">
+                                                <img src="../../images/pic.jpg" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="name">
+                                                    IMG_4421.JPG
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-none"></i>
+                                                        </span>
+                                                        <span class="no">
+                                                            QC201806120296
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-MAC"></i>
+                                                        </span>
+                                                        <span class="mac">
+                                                            94:98:A2:03:57:3D
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-fenzu"></i>
+                                                        </span>
+                                                        <span class="date">
+                                                            LW666666
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-shijian"></i>
+                                                        </span>
+                                                        <span class="date">
+                                                            2018-04-05 12:00:00
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-50">
+                                    <div class="item offline">
+                                        <div class="label-checked-box pull-left">
+                                            <input type="checkbox" id="check-01" />
+                                            <label for="check-01">
+                                            </label>
+                                        </div>
+                                        <div class="eq-type">
+                                            X3M
+                                        </div>
+                                        <div class="item-in">
+                                            <div class="pic">
+                                                <img src="../../images/pic.jpg" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="name">
+                                                    IMG_4421.JPG
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-none"></i>
+                                                        </span>
+                                                        <span class="no">
+                                                            QC201806120296
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-MAC"></i>
+                                                        </span>
+                                                        <span class="mac">
+                                                            94:98:A2:03:57:3D
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-fenzu"></i>
+                                                        </span>
+                                                        <span class="date">
+                                                            LW666666
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-shijian"></i>
+                                                        </span>
+                                                        <span class="date">
+                                                            2018-04-05 12:00:00
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-50">
+                                    <div class="item unknow">
+                                        <div class="label-checked-box pull-left">
+                                            <input type="checkbox" id="check-01" />
+                                            <label for="check-01">
+                                            </label>
+                                        </div>
+                                        <div class="eq-type">
+                                            X3M
+                                        </div>
+                                        <div class="item-in">
+                                            <div class="pic">
+                                                <img src="../../images/pic.jpg" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="name">
+                                                    IMG_4421.JPG
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-none"></i>
+                                                        </span>
+                                                        <span class="no">
+                                                            QC201806120296
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-MAC"></i>
+                                                        </span>
+                                                        <span class="mac">
+                                                            94:98:A2:03:57:3D
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-fenzu"></i>
+                                                        </span>
+                                                        <span class="date">
+                                                            LW666666
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-shijian"></i>
+                                                        </span>
+                                                        <span class="date">
+                                                            2018-04-05 12:00:00
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-50">
+                                    <div class="item abnormal">
+                                        <div class="label-checked-box pull-left">
+                                            <input type="checkbox" id="check-01" />
+                                            <label for="check-01">
+                                            </label>
+                                        </div>
+                                        <div class="eq-type">
+                                            X3M
+                                        </div>
+                                        <div class="item-in">
+                                            <div class="pic">
+                                                <img src="../../images/pic.jpg" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="name">
+                                                    IMG_4421.JPG
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-none"></i>
+                                                        </span>
+                                                        <span class="no">
+                                                            QC201806120296
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-MAC"></i>
+                                                        </span>
+                                                        <span class="mac">
+                                                            94:98:A2:03:57:3D
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-fenzu"></i>
+                                                        </span>
+                                                        <span class="date">
+                                                            LW666666
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                        <span class="iconStyle">
+                                                            <i class="iconfont icon-shijian"></i>
+                                                        </span>
+                                                        <span class="date">
+                                                            2018-04-05 12:00:00
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                    </div>
+                </div>
+                <div class="infinite-scroll-preloader" style="display: none;">
+                    <div class="preloader"></div>
+                </div>
+                <div class="noMoreData"></div>
+            </div>
+        </div>
+        <!-- 地图 -->
+        <div class="page" id="routers-map">
+            <header class="bar bar-nav top-head-nav">
+                <a class="icon icon-left pull-left" href="#routers-equipment"></a>
+                <!-- <a class="button button-link button-nav pull-right">
+                    <i class="iconfont icon-sousuo"></i>
+                </a> -->
+                <a href="javascript:void(0);" class="button button-link button-nav pull-right" id="map-popup">
+                    <i class="iconfont icon-shu"></i>
+                </a>
+                <h1 class="title">
+                    监控
+                </h1>
+            </header>
+            <div class="content native-scroll close-panel">
+                <div class="map-dev-state" style="display: none;">
+                    <ul>
+                        <li class="pull-left"><i class="iconfont icon-asmkticon0256"></i><span>0</span></li>
+                        <li class="pull-left"><i class="iconfont icon-asmkticon0256"></i><span>0</span></li>
+                        <li class="pull-left"><i class="iconfont icon-asmkticon0256"></i><span>0</span></li>
+                        <li class="pull-left"><i class="iconfont icon-asmkticon0256"></i><span>0</span></li>
+                    </ul>
+                </div>
+                <div class="close-panel" id="baiduMapView" style="width: 100%;height: 100%;">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 导航 -->
+        <div class="panel panel-left panel-reveal theme-dark" id="panel-left-menu">
+            <div class="close-panel close-btn">
+                <i class="iconfont icon-cuo"></i>
+            </div>
+            <div class="list-block list-menu">
+                <ul>
+                    <li>
+                        <a class="close-panel" href="play.html">
+                            <span class="icon">
+                                <i class="iconfont icon-bofang2"></i>
+                            </span>
+                            <span class="info"> 播放</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="close-panel" href="media.html">
+                            <span class="icon">
+                                <i class="iconfont icon-sucai"></i>
+                            </span>
+                            <span class="info"> 素材</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="close-panel" href="audit.html">
+                            <span class="icon">
+                                <i class="iconfont icon-shenhe"></i>
+                            </span>
+                            <span class="info"> 审核</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="close-panel" href="monitoring.html">
+                            <span class="icon">
+                                <i class="iconfont icon-jiankong"></i>
+                            </span>
+                            <span class="info"> 监控</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="login-out">
+                <button class="button button-sm button-fill button-danger external" id="login-out">退出</button>
+            </div>
+        </div>
+        <!-- 搜索 -->
+        <div class="popup popup-search">
+            <div class="popup-title">
+                搜索
+            </div>
+            <div class="content-block">
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input type="text" id="mornitor-searcheq" placeholder="设备名称/设备编号/客户名称/设备MAC">
+                                        <div class="iss-close">
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <select id="mornitor-eqstate">
+                                            <option value="">设备状态</option>
+                                            <option value="0">联网</option>
+                                            <option value="2">异常</option>
+                                            <option value="3">未知</option>
+                                            <option value="1">脱机</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <div class="item-text multi-select">
+                                            <div class="multi-select-list">
+                                                选择设备型号
+                                            </div>
+                                            <div class="item-add-icon" id="multi-select"><i class="iconfont icon-tianjia"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input type="text" id="datetime-start" placeholder="开始时间" />
+                                        <div class="iss-close">
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input type="text" id="datetime-end" placeholder="结束时间" />
+                                        <div class="iss-close">
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-50">
+                            <a href="javascript:void(0);" class="button button-big button-fill button-danger close-popup">关闭</a>
+                        </div>
+                        <div class="col-50">
+                            <input type="submit" value="搜索" class="button button-big button-fill button-success" id="mornitor-submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 设备详情 -->
+        <div class="popup popup-map-eq">
+            <div class="popup-title">
+                设备详情
+            </div>
+            <div class="content-block">
+                <div class="list-block">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">设备名称</div>
+                                <div class="item-after" id="eq-name">
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">在线状态</div>
+                                <div class="item-after" id="eq-state">
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">设备编号</div>
+                                <div class="item-after" id="eq-devCode">
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">MAC</div>
+                                <div class="item-after" id="eq-mac">
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">设备型号</div>
+                                <div class="item-after" id="eq-type">
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input type="text" id="map-beginTime" placeholder="轨迹开始时间" />
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input type="text" id="map-endTime" placeholder="轨迹结束时间" />
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-50">
+                            <a href="javascript:void(0);" class="button button-big button-fill button-danger close-popup">关闭</a>
+                        </div>
+                        <div class="col-50">
+                            <input type="submit" value="查看轨迹" class="button button-big button-fill button-success">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 树(含设备) -->
+        <div class="popup popup-map">
+            <div class="popup-title">
+                设备组
+            </div>
+            <div class="content-block">
+                <div class="list-block popup-tree">
+                    <div id="map-tree"></div>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-100">
+                            <a href="javascript:void(0);" class="button button-big button-fill button-danger close-popup">关闭</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 树(不含设备) -->
+        <div class="popup popup-eq">
+            <div class="popup-title">
+                设备组
+            </div>
+            <div class="content-block">
+                <div class="list-block popup-tree">
+                    <div id="eq-tree"></div>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-100">
+                            <a href="javascript:void(0);" class="button button-big button-fill button-danger close-popup">关闭</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 信号源 -->
+        <div class="popup popup-signal">
+            <div class="popup-title">
+                信号源切换 <a href="javascript:void(0);" class="button button-small button-fill button-warning" id="signalAready">回读</a>
+            </div>
+            <div class="content-block">
+                <div class="list-block signal-modal">
+                    <div class="signal-title clearfix">
+                        <div class="pull-left"><span class="iconfont icon-shuruyuan"></span>输入源切换</div>
+                        <div class="pull-right">
+                            <a class="button button-warning signal-btn" data-flag="801">保存</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <!-- <div class="item-media"><i class="icon icon-f7"></i></div> -->
+                        <div class="item-inner">
+                            <div class="item-title">选择窗口</div>
+                            <div class="item-after">
+                                <div class="item-input">
+                                    <select id="signal-screenWin">
+                                        <option value="0">窗口一</option>
+                                        <option value="1">窗口二</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <!-- <div class="item-media"><i class="icon icon-f7"></i></div> -->
+                        <div class="item-inner">
+                            <div class="item-title">输入源切换</div>
+                            <div class="item-after">
+                                <div class="item-input">
+                                    <select id="signal-sourc">
+                                        <option value="1">DVI</option>
+                                        <option value="2">HDMI</option>
+                                        <option value="3">VGA</option>
+                                        <option value="4">CV1</option>
+                                        <option value="5">CV2</option>
+                                        <option value="7">DP</option>
+                                        <option value="8">USB</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="signal-title clearfix">
+                        <div class="pull-left"><span class="iconfont icon-jubufangda"></span>局部/全屏</div>
+                        <div class="pull-right">
+                            <a class="button button-warning signal-btn" data-flag="804">保存</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">选择窗口</div>
+                            <div class="item-after">
+                                <div class="item-input">
+                                    <select id="signal-local-win">
+                                        <option value="0">窗口一</option>
+                                        <option value="1">窗口二</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">局部/全屏</div>
+                            <div class="item-after">
+                                <div class="item-input">
+                                    <select id="signal-local">
+                                        <option value="0">局部</option>
+                                        <option value="1">全屏</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="signal-title clearfix">
+
+                        <div class="pull-left"><span class="iconfont icon-liangdu"></span>亮度调节</div>
+                        <div class="pull-right">
+                            <a class="button button-warning signal-btn" data-flag="810">保存</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">选择窗口</div>
+                            <div class="item-after">
+                                <div class="item-input">
+                                    <select id="signal-light-win">
+                                        <option value="0">窗口一</option>
+                                        <option value="1">窗口二</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">亮度调节</div>
+                            <div class="item-after">
+                                <div class="item-input">
+                                    <div class="range pull-left">
+                                        <div class="range-progress"></div>
+                                        <span class="range-bar"></span>
+                                    </div>
+                                    <div class="range-val pull-left">
+                                        <input type="number" id="range-value" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="signal-title clearfix">
+                        <div class="pull-left"><span class="iconfont icon-dongjie"></span>画面冻结开关</div>
+                        <div class="pull-right">
+                            <a class="button button-warning signal-btn" data-flag="802">保存</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">画面冻结</div>
+                            <div class="item-after">
+                                <div class="item-input">
+                                    <label class="label-switch">
+                                        <input type="checkbox" id="freeze-switch">
+                                        <div class="checkbox"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="signal-title clearfix">
+                        <div class="pull-left"><span class="iconfont icon-pingmu"></span>黑屏</div>
+                        <div class="pull-right">
+                            <a class="button button-warning signal-btn" data-flag="803">保存</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">开屏/黑屏</div>
+                            <div class="item-after">
+                                <div class="item-input">
+                                    <select id="signal-screen">
+                                        <option value="0">开屏</option>
+                                        <option value="1">黑屏</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="signal-title clearfix">
+                        <div class="pull-left"><span class="iconfont icon-huazhonghua"></span>PIP（画中画）</div>
+                        <div class="pull-right">
+                            <a class="button button-warning signal-btn" data-flag="814">保存</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">PIP（画中画）开关</div>
+                            <div class="item-after">
+                                <div class="item-input">
+                                    <label class="label-switch">
+                                        <input type="checkbox" id="pip-switch">
+                                        <div class="checkbox"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-100">
+                            <a href="javascript:void(0);" class="button button-big button-fill button-danger close-popup">关闭</a>
+                        </div>
+                        <!-- <div class="col-50">
+                            <a href="javascript:void(0);" class="button button-big button-fill button-dark" id="signalAready">回读</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="float-menu">
+            <div class="float-menu-icon" data-flm="closed">
+                <div class="float-menu-btn">
+                    <i class="iconfont icon-caidan"></i>
+                </div>
+                <div class="float-menu-list">
+                    <ul>
+                        <li>
+                            <a href="eqtask.html" external>
+                                <i class="iconfont icon-renwu"></i>
+                            </a>
+                        </li>
+                        <li id="float-menu-map">
+                            <a href="#routers-map">
+                                <i class="iconfont icon-jiankong"></i>
+                            </a>
+                        </li>
+                        <li id="float-menu-eq" style="display:none;">
+                            <a href="#routers-equipment">
+                                <i class="iconfont icon-shebei"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 遮罩 -->
+    <div class="custom-overlay"></div>
+    <script src="./../js/lang.js"></script>
+    <script src="./../lib/zepto/zepto.js"></script>
+    <script src="./../lib/moment/moment.min.js"></script>
+    <script src="./../lib/dxhtml/dhtmlxcommon.js"></script>
+    <script src="./../lib/dxhtml/dhtmlxtree.js"></script>
+    <script src="./../lib/sui/sm.js"></script>
+    <!-- <script src="./../lib/sui/sm-extend.js"></script> -->
+    <script src="./../js/base.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=TmoSBaT2SmrSyxRlwmHKOWwRQgsZ1XiU"></script><!-- 百度地图   -->
+    <script src="./../lib/baidumap/geoUtil.js"></script>
+    <script src="./../lib/baidumap/TextIconOverlay_min.js"></script>
+    <script src="./../lib/baidumap/MarkerClusterer_min.js"></script>
+    <script src="./../js/monitor.js"></script>
+</body>
+
+</html>

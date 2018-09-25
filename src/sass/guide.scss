@@ -1,0 +1,86 @@
+@import 'common';
+.guide{
+    @include linear-gradient(205deg, #38cdd7,#2b75ba);
+    .guide-wrap{
+        width: 100%;
+        height: 100%;
+        background-image: url('./../images/login_bg.png');
+        background-size: cover;
+    }
+    .guide-circle{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: pxToRem(300);
+        width: pxToRem(300);
+        padding: pxToRem(30);
+        transform: translate(-50%, -50%);
+        background: rgba(255,255,255,.2);
+        border-radius: 100%;
+        .guide-menu-list{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: pxToRem(270);
+            height: pxToRem(270);
+            padding: pxToRem(30);
+            transform: translate(-50%, -50%);
+            @include linear-gradient(205deg, #35c8da,#2a7cbe);
+            border-radius: 100%;
+            -moz-box-shadow: 0px 0px 3px rgba(61, 196, 215, 0.8) inset, 0 pxToRem(3) pxToRem(8) 0rem #017da7; 
+            -webkit-box-shadow: 0px 0px 3px rgba(61, 196, 215, 0.8) inset, 0 pxToRem(3) pxToRem(8) 0rem #017da7; 
+            box-shadow: 0px 0px 3px rgba(61, 196, 215, 0.8) inset, 0 pxToRem(3) pxToRem(8) 0rem #017da7;
+            .guide-menu{
+                position: relative;
+                width: pxToRem(104);
+                height: pxToRem(104);
+                padding: pxToRem(10) 0rem;
+                color: #ffffff;
+                text-align: center;
+                a{
+                    display: inline-block;
+                    color: #ffffff; 
+                }
+                .icon {
+                    i{
+                        font-size: pxToRem(32);
+                    }
+                }
+                .info{
+                    margin: 0rem;
+                    color: #ffffff;
+                    font-size: pxToRem(20);
+                }
+            }
+            &::before{
+                position: absolute;
+                width: pxToRem(1);
+                height: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(0, -50%);
+                content: '';
+                background: rgba(255,255,255,.2);
+            }
+            &::after{
+                position: absolute;
+                width: pxToRem(1);
+                height: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(0,-50%) rotate(90deg);
+                content: '';
+                background: rgba(255,255,255,.2);
+            }
+        }
+    }
+    .login-scan{
+        position:absolute;
+        top: pxToRem(10);
+        left: pxToRem(10);
+        .iconfont{
+            color: #ffffff;
+            font-size: pxToRem(20);
+        }
+    }
+}

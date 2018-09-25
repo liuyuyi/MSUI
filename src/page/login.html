@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>登录页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="address=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="./../fonts/iconfont.css">
+    <link rel="stylesheet" href="./../css/sui/sm.css">
+    <link rel="stylesheet" href="./../css/login.css">
+
+</head>
+
+<body>
+
+    <div class="page-group">
+        <div class="page page-current">
+            <div class="content login">
+                <div class="login-wrap">
+                    <div class="login-item">
+                        <div class="login-title">云平台</div>
+                        <div class="info">
+                            <div class="item user-inp">
+                                <span class="icon"><i class="iconfont icon-denglu"></i></span>
+                                <input id="name" type="name" placeholder="用户名" oninput="value=Public.checkLetNum(this)">
+                            </div>
+                            <div class="item user-pwd">
+                                <span class="icon"><i class="iconfont icon-mima"></i></span>
+                                <input id="pwd" type="password" placeholder="密码">
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <!-- <a href="guide.html" class="button button-fill button-warning">登录</a> -->
+                            <button class="button button-fill button-warning" id="login">登录</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./../js/lang.js"></script>
+    <script src="./../lib/zepto/zepto.js"></script>
+    <script src="./../lib/sui/sm.js"></script>
+    <script src="./../js/base.js"></script>
+
+    <script>
+        function login() {
+
+            var name = $('#name').val(),
+                pwd = $('#pwd').val()
+
+            if (name === '' || pwd === '') {
+
+                Public.toast('用户名和密码不能为空！');
+                return
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: PublicUrl.loginUrl(),
+                data: {
+                    username: name,
+                    password: pwd
+                },
+                dataType: 'json',
+                success: function (data) {
+
+                    if (data) {
+
+                        if (data.code > 0) {
+
+                            var response = JSON.parse(data.response);
+
+                            Public.setCookie('token', response.token);
+                            Public.setCookie('username', response.userAccount);
+                            Public.toast('登录成功！');
+                            window.location.href = 'guide.html';
+
+                        } else {
+
+                            Public.toast(data.response);
+
+                        }
+
+                    }
+
+                },
+                error: function (xhr, type) {
+
+                    // console.log(xhr)
+
+                }
+            })
+
+        }
+
+        $(function () {
+
+            Public.inputClean();
+
+            $.init();
+
+            Public.clearAllCookie();
+
+            $(document).on('click', '#login', function () {
+
+                login();
+
+            });
+
+
+        })
+    </script>
+
+</body>
+
+</html>

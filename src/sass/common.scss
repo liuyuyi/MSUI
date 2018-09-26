@@ -272,6 +272,7 @@ a.iconfont {
 
             ul {
                 li {
+                    position: relative;
                     width: $flMenuW;
                     height: $flMenuW;
                     margin: pxToRem(8) 0rem;
@@ -289,7 +290,24 @@ a.iconfont {
                             transform: scale(0);
                         }
                     }
-
+                    &:active{
+                        background: #ff8b36;
+                    }
+                    &:after{
+                        content: attr(data-menuname);
+                        position: absolute;
+                        top: 50%;
+                        right: pxToRem(52);
+                        height: pxToRem(20);
+                        line-height: pxToRem(20);
+                        padding: pxToRem(4) pxToRem(6);
+                        margin-top: -#{pxToRem(12)};
+                        font-size: pxToRem(14);
+                        color: #fff;
+                        background: #999;
+                        border-radius: pxToRem(6);
+                        white-space: nowrap;
+                    }
                     a {
                         width: $flMenuW;
                         height: $flMenuW;

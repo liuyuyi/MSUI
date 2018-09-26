@@ -1328,3 +1328,8 @@ button{
 .float-menu-btn{
     cursor: pointer;
 }
+.float-menu .float-menu-icon .float-menu-list ul li:after{
+    right: 52px;
+    font-size: 14px;
+    padding: 4px 6px;
+}

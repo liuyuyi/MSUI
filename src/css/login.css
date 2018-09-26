@@ -197,6 +197,7 @@ a.iconfont {
       -webkit-transform: scale(0);
       transform: scale(0); }
       .float-menu .float-menu-icon .float-menu-list ul li {
+        position: relative;
         width: 2.1rem;
         height: 2.1rem;
         margin: 0.4rem 0rem;
@@ -232,6 +233,22 @@ a.iconfont {
           transition-delay: 0.3s;
           -webkit-transform: scale(0);
           transform: scale(0); }
+        .float-menu .float-menu-icon .float-menu-list ul li:active {
+          background: #ff8b36; }
+        .float-menu .float-menu-icon .float-menu-list ul li:after {
+          content: attr(data-menuname);
+          position: absolute;
+          top: 50%;
+          right: 2.6rem;
+          height: 1rem;
+          line-height: 1rem;
+          padding: 0.2rem 0.3rem;
+          margin-top: -0.6rem;
+          font-size: 0.7rem;
+          color: #fff;
+          background: #999;
+          border-radius: 0.3rem;
+          white-space: nowrap; }
         .float-menu .float-menu-icon .float-menu-list ul li a {
           width: 2.1rem;
           height: 2.1rem;

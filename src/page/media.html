@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>素材</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="address=no">
@@ -17,8 +18,9 @@
     <link rel="stylesheet" href="./../css/inside.css">
 
 </head>
+
 <body>
-    
+
     <div class="page-group">
         <div class="page">
             <header class="bar bar-nav top-head-nav">
@@ -36,7 +38,7 @@
             <!-- 列表工具栏 -->
             <div class="content-tool">
                 <div class="label-checked-box pull-left">
-                    <input type="checkbox" class="checkAll" id="checkAll" data-list="content-list"/>
+                    <input type="checkbox" class="checkAll" id="checkAll" data-list="content-list" />
                     <label for="checkAll">
                         <span class="name">
                             全选
@@ -47,7 +49,8 @@
                     <i class="iconfont icon-shanchu1"></i>
                 </div>
             </div>
-            <div id="content-list" class="content native-scroll content-page-list content-media-list pull-to-refresh-content infinite-scroll infinite-scroll-bottom" data-ptr-distance="50" data-distance="50">
+            <div id="content-list" class="content native-scroll content-page-list content-media-list pull-to-refresh-content infinite-scroll infinite-scroll-bottom"
+                data-ptr-distance="50" data-distance="50">
                 <div class="pull-to-refresh-layer">
                     <div class="preloader"></div>
                     <div class="pull-to-refresh-arrow"></div>
@@ -106,12 +109,12 @@
                 </div>
                 <div class="float-menu-list">
                     <ul>
-                        <li>
+                        <li data-menuname="视频">
                             <a href="javascript:void(0)" class="fl-menu-btn" data-type="2">
                                 <i class="iconfont icon-shipin"></i>
                             </a>
                         </li>
-                        <li>
+                        <li data-menuname="图片">
                             <a href="javascript:void(0)" class="fl-menu-btn" data-type="1">
                                 <i class="iconfont icon-tupian"></i>
                             </a>
@@ -172,7 +175,8 @@
                 <i class="iconfont icon-shanchu"></i>
             </div>
             <div class="video-player" id="video-player">
-                <video src="" poster="./../images/play.jpg" webkit-playsinline="true" x-webkit-airplay="true" playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true"  preload="none"></video>
+                <video src="" poster="./../images/play.jpg" webkit-playsinline="true" x-webkit-airplay="true"
+                    playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" preload="none"></video>
                 <div class="video-controls">
                     <div class="progress" style="clear: both;">
                         <div class="bar"></div>
@@ -208,4 +212,5 @@
     <script src="./../js/media.js"></script>
 
 </body>
+
 </html>
